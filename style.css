@@ -31,11 +31,13 @@ background-size: cover;
 
 
 html {
+ 
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 body {
+  
   margin: 0;
   font-family: Comfortaa, sans-serif;
   color: var(--on-background);
