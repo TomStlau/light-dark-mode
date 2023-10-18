@@ -69,7 +69,7 @@ h2 {
   color: var(--on-background-alt);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .nav a:not(:first-child), .nav div.theme-switch-wrapper {display: none;}
   .nav a.icon {
     float: left;
@@ -77,7 +77,7 @@ h2 {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .nav.responsive {position: relative;}
   .nav.responsive .icon {
     position: absolute;
@@ -89,12 +89,20 @@ h2 {
     display: block;
     text-align: left;
     font-size: 1rem;
+    width: fit-content;
   }
   .nav.responsive {
-    justify-content: center;
-    width: 50%;
+    flex-direction: column;
+    width: auto;
     position: fixed;
   }
+}
+
+@media screen and (min-width: 1000px) {
+  .fa-bars {
+    display: none;
+  }
+  
 }
 /* Navigation */
 nav {

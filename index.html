@@ -265,18 +265,25 @@
     function addMyFunctionToNavLinks() {
       const navLinks = document.querySelectorAll(".nav-link"); 
       for (item of navLinks) {
-        item.addEventListener("click", () => {
-          myFunction();
-        })
+        // check if item has the function addMyFunctionToNavLinks
+        item.onclick = myFunction;
       }
     }
-    if (width <= 800) {
-      menuIcon.classList.remove("hidden");
+    if (width <= 1000) {
        addMyFunctionToNavLinks();
-    } else {
-      console.log("ok");
-      menuIcon.classList.add("hidden");	
     }
+    let under1000;
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 1000 && !under1000) {
+        console.log("hello");
+        under1000 = true;
+        addMyFunctionToNavLinks();
+      } else if (window.innerWidth > 1000 && under1000) {
+        console.log("hello2");
+        under1000 = false;
+        
+      }
+    }) 
     </script>
 </body>
 
