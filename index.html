@@ -16,26 +16,30 @@
   <!-- Navigation -->
   <div class="nav-wrapper">
     
-    <nav id="nav">
-      <a href="#home">HOME</a>
-      <a href="#about">ABOUT</a>
-      <a href="#projects">PROJECTS</a>
-      <a href="#buttons">BUTTONS</a>
-      <a href="#contact">CONTACT</a>
+    <nav id="nav" class="nav">
+      <a class="nav-link" href="#home">HOME</a>
+      <a class="nav-link" href="#about">ABOUT</a>
+      <a class="nav-link" href="#projects">PROJECTS</a>
+      <a class="nav-link" href="#buttons">BUTTONS</a>
+      <a class="nav-link" href="#contact">CONTACT</a>
       <div class="theme-switch-wrapper">
         <span id="toggle-icon">
           <span class="toggle-text">Light Mode</span>
           <i class="fas fa-sun"></i>
         </span>
         <label class="theme-switch">
-          <input type="checkbox">
-          <div class="slider round"></div>
+        </a>
+        <input type="checkbox">
+        <div class="slider round"></div>
         </label>
       </div>
-    </div>
-  </nav>
-  <!-- Home -->
-  <section id="home">
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</nav>
+<!-- Home -->
+<section id="home">
     <div class="light-img-container">
       <img id="light-img" src="img/lights-img.jpg" alt="">
 
@@ -247,6 +251,33 @@
   <!-- Script -->
   <script src="pagination.js"></script>
   <script src="script.js"></script>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("nav");
+      if (x.className === "nav") {
+        x.className += " responsive";
+      } else {
+        x.className = "nav";
+      }
+    }
+    const width = window.innerWidth;
+    const menuIcon = document.querySelector(".fa");
+    function addMyFunctionToNavLinks() {
+      const navLinks = document.querySelectorAll(".nav-link"); 
+      for (item of navLinks) {
+        item.addEventListener("click", () => {
+          myFunction();
+        })
+      }
+    }
+    if (width <= 800) {
+      menuIcon.classList.remove("hidden");
+       addMyFunctionToNavLinks();
+    } else {
+      console.log("ok");
+      menuIcon.classList.add("hidden");	
+    }
+    </script>
 </body>
 
 </html>
